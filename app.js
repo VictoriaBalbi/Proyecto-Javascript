@@ -7,6 +7,14 @@ const usuarios = [
 ]
 
 
+// si el local storage es nulo es porque es la primera vez que el usuario entra a la pag → debo cargar mis usuarios predeterminados 
+if(localStorage.getItem("usuarios")==null)
+{
+   //lo paso a JSON
+   const usuariosJSON = JSON.stringify(usuarios);
+   //lo subo al local storage
+   localStorage.setItem("usuarios",usuariosJSON); 
+}
 
 // capturo el formulario, el usuario 
 const formulario = document.querySelector("#form_ingreso");
