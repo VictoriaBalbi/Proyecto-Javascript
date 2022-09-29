@@ -1,0 +1,45 @@
+body{
+    background-color: white;
+}
+.conteiner_index{
+    height: auto;
+    margin: auto 25vw;
+    padding: 5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 2px solid #d90429;
+    background-color: #edf2f4;
+
+}
+.menu{
+    margin-left: 0;
+    
+    padding: 2%;
+    width: 25vw;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #d90429 1px solid;
+
+}
+
+
+
+.form_ingreso, .registro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
