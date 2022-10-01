@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* Reseteo */
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  /* para scrollear más lento entre secciones */
+  scroll-behavior: smooth;
+  max-width: 100%;
+}
+
+header {
+  background-color: black;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+headerlogo {
+  width: 20vw;
+}
+
+/*# sourceMappingURL=style.css.map */
