@@ -10,27 +10,73 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form class="canciones-rock">
+  <header class="header_main">
+    <h1 class="logo">Sistema principal</h1>
+   
+
+    <nav class=" navbar bg-light">
+      <div class=" buscador container-fluid">
+        <form class=" buscador_boton d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+    <div class="menu">
+      <nav class="nav flex-column">
+          <a class="nav-link active" aria-current="page" href="main.html">Inicio</a>
+          <a class="nav-link" href="search.html">Género</a>
+          <a class="nav-link" href="playlist.html">Playlist</a>
+          <a class="nav-link" href="index.html">Cerrar sesión</a>
+      </nav>
+    </div>
+    <div class="contenido">
+      <form class="canciones-rock">
         <ul class="list-group">
           <li class="list-group-item">
-            <input class="form-check-input me-1" type="radio" name="listGroupRadioROCK" value="0" id="firstRadio">
-            <label id="cancion-rock1" class="form-check-label" for="firstRadio"></label>
+            <div class="item">
+              <input class="form-check-input me-1" type="radio" name="listGroupRadioROCK" value="0" id="firstRadio">
+              <label id="cancion-rock1" class="form-check-label" for="firstRadio"></label>
+            </div>
+            <div class="botones-canciones">
+              <button type="submit" class="btn btn-primary boton_escuchar" >Escuchar</button>
+              <button type="submit" class="btn btn-primary boton_playlist" >+</button>
+            </div>
           </li>
+
           <li class="list-group-item">
-            <input class="form-check-input me-1" type="radio" name="listGroupRadioROCK" value="1" id="secondRadio">
-            <label id="cancion-rock2" class="form-check-label" for="secondRadio"> </label>
+            <div class="item">
+              <input class="form-check-input me-1" type="radio" name="listGroupRadioROCK" value="1" id="secondRadio">
+              <label id="cancion-rock2" class="form-check-label" for="secondRadio"> </label>
+            </div>  
+            <div class="botones-canciones">
+              <button type="submit" class="btn btn-primary boton_escuchar" >Escuchar</button>
+              <button type="submit" class="btn btn-primary boton_playlist"  >+</button>
+            </div>
           </li>
+
           <li class="list-group-item">
-            <input class="form-check-input me-1" type="radio" name="listGroupRadioROCK" value="2" id="thirdRadio">
-            <label id="cancion-rock3" class="form-check-label" for="secondRadio"> </label>
+            <div class="item">
+              <input class="form-check-input me-1" type="radio" name="listGroupRadioROCK" value="2" id="thirdRadio">
+              <label id="cancion-rock3" class="form-check-label" for="secondRadio"> </label>
+            </div>
+            <div class="botones-canciones">
+              <button type="submit" class="btn btn-primary boton_escuchar" >Escuchar</button>
+              <button type="submit" class="btn btn-primary boton_playlist" >+</button>
+            </div>
           </li>
         </ul>
   
-        <button type="submit" class="btn btn-primary" >Escuchar</button>
+        
   
       </form>
-
+    </div>
+  </main>
       <script src="app.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

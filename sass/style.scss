@@ -8,13 +8,90 @@
     max-width: 100%;
     
 }
- 
+// header en comun 
 header{
     background-color: black;
-    height: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     &logo {
         width: 20vw;
-        color:
+        color: white;    
+    }
+    nav{
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .buscador{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+    }
+    
+}
+//main en comun 
+main{
+    
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .menu{
+       width: 15vw;
+       height: 100%;
+
+       
+       nav{
+        padding: 10%;
+        height: 100%;
+        display: flex;
+       
+        justify-content: center;
+        align-items: center;
+
+        a{
+            padding: 5%;
+        }
+        
+       }
+
+       
+
+    }
+    .contenido{
+        height: 100%;
+        width: 85vw;
+    }
+}
+
+.contenido{
+   
+    .generos{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+       .genero{
+        margin: 5%;
+       }
+    }
+}
+
+.canciones-rock{
+    padding: 5%;
+    width: 80%;
+    li{
+        
+        display: flex;
+        
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}

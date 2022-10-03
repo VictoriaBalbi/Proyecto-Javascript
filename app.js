@@ -152,22 +152,68 @@ document.getElementById('cancion-rock3').innerHTML = `${cancionesrock[2].mostrar
 //document.getElementById('cancion-pop3').innerHTML = `${cancionespop[2].mostrarInfoCancion()}`  ;
 //----------------------------------------------------------------
 
-const form_canciones_rock= document.querySelector(".canciones-rock");
+//const form_canciones_rock= document.querySelector(".canciones-rock");
 //const form_canciones_pop= document.querySelector(".canciones-pop");
-form_canciones_rock.addEventListener("submit", xGenero);
+//form_canciones_rock.addEventListener("submit", xGenero);
 //form_canciones_pop.addEventListener("submit", xGenero);
 
 
-
-function xGenero(e){
+const boton_escuchar =document.querySelector(".boton_escuchar");
+boton_escuchar.addEventListener("click", (e) =>{
     e.preventDefault();
   /*  if(form_canciones_pop!==null){
         valorActivo = document.querySelector('input[name=listGroupRadioPOP]:checked').value
         alert(`Reproduciendo: ${cancionespop[valorActivo].mostrarInfoCancion()}`)
     }
 */
-    if (form_canciones_rock!==null){
+    // if (form_canciones_rock!==null){
     valorActivo = document.querySelector('input[name=listGroupRadioROCK]:checked').value
     alert(`Reproduciendo: ${cancionesrock[valorActivo].mostrarInfoCancion()}`)
+    // }
+})
+// SUMAR UNA CANCION A LA PLAYLIST
+//creo el array vacio
+const playlist = [];
+
+
+const boton_playlist =document.querySelector(".boton_playlist");
+boton_playlist.addEventListener("click", (e) => {
+    e.preventDefault();
+    valorActivo = document.querySelector('input[name=listGroupRadioROCK]:checked').value
+    
+    let repetida = false;
+    
+    playlist.forEach((cancion) => {
+        if (cancion.titulo == cancionesrock[valorActivo].titulo) 
+         {  repetida=true;
+            return // salgo del foreach
+         }
+    });
+
+    
+    if (repetida == false){
+        playlist.push(cancionesrock[valorActivo]);
+       
+        Swal.fire({
+            title: 'La cancion se agrego a la playlist',
+            text: 'Continuar?',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        })
     }
-}
+    else {
+        Swal.fire({
+            title: 'La cancion ya se encuentra en la playlist',
+            text: 'Continuar?',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        })
+    }
+    
+   
+    console.log(playlist)
+ 
+    
+})
+
+
