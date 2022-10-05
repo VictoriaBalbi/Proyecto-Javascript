@@ -1,3 +1,7 @@
+/*Importo archivos base*/
+@import 'base/variables';
+
+@import 'login';
 /* Reseteo */
 * {
     padding: 0%;
@@ -8,9 +12,13 @@
     max-width: 100%;
     
 }
+
+body{
+    background-color: $color_base;
+}
 // header en comun 
 header{
-    background-color: black;
+    background-color: $color_oscuro;
     height: 20vh;
     display: flex;
     justify-content: space-between;

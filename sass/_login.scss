@@ -1,0 +1,34 @@
+
+.conteiner_index{
+
+    width: 50vw;
+    height: fit-content;
+    margin:0% 25vw;
+    padding-top: 3%;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+    button{
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+       
+        
+    }
+
+    .registro{
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

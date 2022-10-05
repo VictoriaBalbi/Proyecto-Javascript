@@ -1,4 +1,30 @@
 @charset "UTF-8";
+/*Importo archivos base*/ /*Colores de la pagina*/
+.conteiner_index {
+  width: 50vw;
+  height: fit-content;
+  margin: 0% 25vw;
+  padding-top: 3%;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.conteiner_index button:hover {
+  transform: scale(1.2);
+}
+.conteiner_index form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.conteiner_index .registro {
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Reseteo */
 * {
   padding: 0%;
@@ -9,8 +35,12 @@
   max-width: 100%;
 }
 
+body {
+  background-color: #FFF5E4;
+}
+
 header {
-  background-color: black;
+  background-color: #850E35;
   height: 20vh;
   display: flex;
   justify-content: space-between;
