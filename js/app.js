@@ -74,6 +74,8 @@ for (let boton of botones_playlist){
     boton.addEventListener("click",sumarPlaylist)
 }
 
+// TO DO: DIFERENCIAR LOS BOTONES PARA QUE NO HAGAN NADA SI EL CHECK ESTA EN OTRO INPUT
+
 function sumarPlaylist(e) {
     e.preventDefault();
     valorActivo = document.querySelector('input[name=listGroupRadioROCK]:checked').value
