@@ -1,0 +1,8 @@
+[
+    {"id":1,"titulo": "As it was","artista": "Harry Styles" , "genero":"Pop"},
+    {"id":2 ,"titulo": "Bam Bam","artista": "Camila Cabello", "genero":"Pop"},
+    {"id":3,"titulo": "Angels like you", "artista":"Miley Cyrus", "genero":"Pop"},
+    {"id":4 ,"titulo":"Tan solo" ,"artista": "Los Piojos" , "genero":"Rock"},
+    {"id":5 ,"titulo": "El favor" ,"artista": "Las Pastillas del Abuelo" , "genero":"Rock"},
+    {"id":6 ,"titulo": "Tu encanto","artista":"Conociendo Rusia" , "genero":"Rock"}
+]
