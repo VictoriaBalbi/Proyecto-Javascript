@@ -4,7 +4,8 @@ const playlist = [];
 const contenedor_canciones = document.querySelector(".list-group");
 const infoCanciones = async() => {
     const res = await fetch("../data.json")
-    const data = await res.json()
+    let data = await res.json()
+    data = data.filter((cancion)=> cancion.genero== "Rock")
 
     data.forEach((cancion,indice)=>{
         const li = document.createElement("li");
