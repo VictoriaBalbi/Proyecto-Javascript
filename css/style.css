@@ -40,26 +40,16 @@ body {
 }
 
 header {
-  background-color: #850E35;
+  background-color: #121640;
   height: 20vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-headerlogo {
-  width: 20vw;
+header .logo {
+  width: auto;
+  height: 20vh;
   color: white;
-}
-header nav {
-  width: 80vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-header nav .buscador {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 main {
@@ -73,12 +63,13 @@ main {
 main .menu {
   width: 15vw;
   height: 100%;
+  background-color: #121640;
 }
 main .menu nav {
   padding: 10%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 main .menu nav a {
@@ -88,8 +79,30 @@ main .contenido {
   height: 100%;
   width: 85vw;
 }
+main .cancionesXgenero {
+  width: 80%;
+  height: 100%;
+  width: 85vw;
+  margin-top: 2%;
+}
+main .cancionesXgenero ul {
+  list-style: none;
+  margin-left: 5%;
+}
+main .cancionesXgenero ul .canciones {
+  width: 85vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
+main .cancionesXgenero ul .canciones .item {
+  width: 50%;
+  font-size: larger;
+}
 
 .contenido .generos {
+  margin: 0 5%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -98,14 +111,36 @@ main .contenido {
   margin: 5%;
 }
 
-.canciones-rock {
-  padding: 5%;
+#progress-container {
   width: 80%;
+  margin: 0 5%;
+  background-color: #121640;
 }
-.canciones-rock li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+#progress {
+  background-color: #00C4CC;
+  width: 0%;
+}
+
+.controles {
+  width: 80%;
+  margin: 0% 5%;
+  justify-content: space-evenly;
+}
+.controles .boton_playlist {
+  margin: 0 5%;
+  color: white;
+  background-color: #ee3ec9;
+  border: white;
+}
+.controles button {
+  background-color: transparent;
+  border: none;
+  margin: 2%;
+}
+.controles button i {
+  font-size: 1.7rem;
+  color: #121640;
 }
 
 /*# sourceMappingURL=style.css.map */

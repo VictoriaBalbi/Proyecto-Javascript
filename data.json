@@ -1,86 +1,219 @@
 [
-    {"id":1,
-    "titulo": "Adventure",
+    {"titulo": "Adventure",
     "artista": "Madelyniris" ,
     "genero":"Pop",
     "ruta": "Adventure_-_madelyniris_(2).mp3"
     },
     
-    {"id":2,
-    "titulo": "Burn your love",
+    {"titulo": "Burn your love",
     "artista": "Sunwill" ,
     "genero":"Pop",
     "ruta": "Burn_Your_Love_-_Sunwill.mp3"
     },
 
-    {"id":3,
-    "titulo": "Criminal",
+    {"titulo": "Criminal",
     "artista": "Axl & Arth" ,
     "genero":"Pop",
     "ruta": "Criminal-Axl_amp_Arth.mp3"
     },
 
-    {"id":4,
-    "titulo": "Dopamine",
+    {"titulo": "Dopamine",
     "artista": "Smoking with poets" ,
     "genero":"Pop",
-    "ruta": "musica/pop/Dopamine_-_Smoking_With_Poets.mp3"
+    "ruta": "Dopamine_-_Smoking_With_Poets.mp3"
     },
 
-    {"id":5,
-    "titulo": "Five O'clock",
+    {"titulo": "Five O'clock",
     "artista": "JEKK" ,
     "genero":"Pop",
-    "ruta": "musica/pop/Five_O'Clock_-_JEKK.mp3"
+    "ruta": "Five_O'Clock_-_JEKK.mp3"
     },
     
-    {"id":6,
-    "titulo": "Miss Understanding",
+    {"titulo": "Miss Understanding",
     "artista": "Sam Brown" ,
     "genero":"Pop",
-    "ruta": "musica/pop/Miss_Understanding_-_Sam_Brown.mp3"
+    "ruta": "Miss_Understanding_-_Sam_Brown.mp3"
     },
 
-    {"id":7,
-    "titulo": "Missing you",
+    {"titulo": "Missing you",
     "artista": "David Krystal" ,
     "genero":"Pop",
-    "ruta": "musica/pop/Missing_You_-_David_Krystal.mp3"
+    "ruta": "Missing_You_-_David_Krystal.mp3"
     },
     
-    {"id":8,
-    "titulo": "Ocean",
+    {"titulo": "Ocean",
     "artista": "David Davis" ,
     "genero":"Pop",
-    "ruta": "musica/pop/Ocean_-_David_Davis.mp3"
+    "ruta": "Ocean_-_David_Davis.mp3"
     },
 
-    {"id":9,
-    "titulo": "See the world",
+    {"titulo": "See the world",
     "artista": "Mercury &The Architects" ,
     "genero":"Pop",
-    "ruta": "musica/pop/See_The_World_-_Mercury_amp_The_Architects.mp3"
+    "ruta": "See_The_World_-_Mercury_amp_The_Architects.mp3"
     },
     
-    {"id":10,
-    "titulo": "Stitches",
+    {"titulo": "Stitches",
     "artista": "Lilly Wolf feat. Shane MauX" ,
     "genero":"Pop",
-    "ruta": "musica/pop/Stitches_ft._Shane_MauX_-_lillywolf.mp3"
+    "ruta": "Stitches_ft._Shane_MauX_-_lillywolf.mp3"
     },
     
-    {"id":11,
-    "titulo": "This ain't love",
+    {"titulo": "This ain't love",
     "artista": "Jyant" ,
     "genero":"Pop",
-    "ruta": "musica/pop/This_Ain't_Love_-_Jyant_(2).mp3"
+    "ruta": "This_Ain't_Love_-_Jyant_(2).mp3"
     },
     
-    {"id":12,
-    "titulo": "True love",
+    {"titulo": "True love",
     "artista": "Richard Shekari" ,
     "genero":"Pop",
-    "ruta": "musica/pop/True_Love_-_Richard_Shekari.mp3"
+    "ruta": "True_Love_-_Richard_Shekari.mp3"
+    },   
+
+    {"titulo": "Blood",
+    "artista": "All my friends" ,
+    "genero":"Rock",
+    "ruta": "Blood_-_All_My_Friends_Hate_Me.mp3"
+    },
+    
+    {"titulo": "Boys, girls, toys & words",
+    "artista": "Modern pitch" ,
+    "genero":"Rock",
+    "ruta": "Boys,_Girls,_Toys_&_Words_-_Modern_Pitch.mp3"
+    },
+
+    {"titulo": "Cold inside",
+    "artista": "Rude" ,
+    "genero":"Rock",
+    "ruta": "Cold_Inside_-_Rude_(2).mp3"
+    },
+
+    {"titulo": "Higher and higher",
+    "artista": "Scream inc" ,
+    "genero":"Rock",
+    "ruta": "Higher_And_Higher_-_Scream_Inc._(3).mp3"
+    },
+
+    {"titulo": "It could be you",
+    "artista": "Steep" ,
+    "genero":"Rock",
+    "ruta": "It_Could_Be_You_-_steep.mp3"
+    },
+    
+    {"titulo": "Kill the old",
+    "artista": "The league" ,
+    "genero":"Rock",
+    "ruta": "Kill_the_Old_-_theleague.mp3"
+    },
+
+    {"titulo": "Living with the pain",
+    "artista": "Fallen to flux" ,
+    "genero":"Rock",
+    "ruta": "Living_With_The_Pain_-_Fallen_to_Flux.mp3"
+    },
+    
+    {"titulo": "Not alone",
+    "artista": "Rude" ,
+    "genero":"Rock",
+    "ruta": "Not_Alone_-_Rude_(2).mp3"
+    },
+
+    {"titulo": "Not my problem",
+    "artista": "All my friends hate me" ,
+    "genero":"Rock",
+    "ruta": "Not_My_Problem_-_All_My_Friends_Hate_Me.mp3"
+    },
+    
+    {"titulo": "Show me",
+    "artista": "Aire" ,
+    "genero":"Rock",
+    "ruta": "Show_Me_-_AIRE.mp3"
+    },
+    
+    {"titulo": "The edge",
+    "artista": "Rising bones" ,
+    "genero":"Rock",
+    "ruta": "The_Edge_-_Rising_Bones.mp3"
+    },
+    
+    {"titulo": "The flood",
+    "artista": "BLC MIRROR CLB" ,
+    "genero":"Rock",
+    "ruta": "The_Flood_-_BLC_MIRROR_CLB.mp3"
+    },
+    
+    {"titulo": "45",
+    "artista": "Easy" ,
+    "genero":"Indie",
+    "ruta": "45._-_Easy.mp3"
+    },
+    
+    {"titulo": "After midnight",
+    "artista": "Paxton Pennington" ,
+    "genero":"Indie",
+    "ruta": "After_Midnight_-_Paxton_Pennington.mp3"
+    },
+
+    {"titulo": "Bright red and march away",
+    "artista": "Ping pong club" ,
+    "genero":"Indie",
+    "ruta": "Bright_Red_and_March_Away_-_Ping_Pong_Club.mp3"
+    },
+
+    {"titulo": "Doppleganger",
+    "artista": "Tab ft A.U.R.C" ,
+    "genero":"Indie",
+    "ruta": "Doppleganger_(feat.A.U.R.C)_-_Tab_(2).mp3"
+    },
+
+    {"titulo": "Fresh body shop",
+    "artista": "Handcrafted" ,
+    "genero":"Indie",
+    "ruta": "Fresh_Body_Shop_-_Handcrafted.mp3"
+    },
+    
+    {"titulo": "Give me a sign",
+    "artista": "The verandas" ,
+    "genero":"Indie",
+    "ruta": "give_me_a_sign_-_the.verandas.mp3"
+    },
+
+    {"titulo": "Glass violet",
+    "artista": "A view from the vale" ,
+    "genero":"Indie",
+    "ruta": "Glass_Violet_-_A_View_From_The_Vale.mp3"
+    },
+    
+    {"titulo": "Levyroad",
+    "artista": "Lean" ,
+    "genero":"Indie",
+    "ruta": "Levyroad_-_Lean.mp3"
+    },
+
+    {"titulo": "Million try",
+    "artista": "MOGU" ,
+    "genero":"Indie",
+    "ruta": "Million_Try_-_MOGU.mp3"
+    },
+    
+    {"titulo": "Pretty pants",
+    "artista": "The happy somethings" ,
+    "genero":"Indie",
+    "ruta": "Pretty_Pants_-_The_Happy_Somethings.mp3"
+    },
+    
+    {"titulo": "The old actor",
+    "artista": "Talking cure" ,
+    "genero":"Indie",
+    "ruta": "The_Old_Actor_-_talking.cure.mp3"
+    },
+    
+    {"titulo": "The prism",
+    "artista": "Just came to my mind" ,
+    "genero":"Indie",
+    "ruta": "The_Prism_-_Just_Came_To_My_Mind_(2).mp3"
     }   
+
 
 ]
