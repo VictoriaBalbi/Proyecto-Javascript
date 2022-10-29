@@ -1,4 +1,3 @@
-
 const formulario_registro= document.querySelector(".form_registro");
 const usuario_nuevo = document.querySelector(".usuario_nuevo");
 const contraseña_nueva = document.querySelector(".contraseña_nueva");

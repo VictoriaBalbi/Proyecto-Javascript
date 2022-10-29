@@ -1,16 +1,47 @@
+html{
+    height: 100vh;
+    .bg-claro{
+        // background-color: $color_oscuro;
+        // background-image:  url("../Logo.png");
+        // background-repeat:  round space;
+        height: 100%;
+        width: 100%;
+    }
+}
 
+.header-index{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+        width: auto;
+        height: 20vh;
+        color: white;    
+    }
+}
 .conteiner_index{
-
-    width: 50vw;
-    height: fit-content;
-    margin:0% 25vw;
-    padding-top: 3%;
-    border: 2px solid blue;
+    height: 80vh;
+    background-color: $color_oscuro;
+    background-image:  url("../Logo.png");
+    
+    background-position: left center;
+    background-repeat: repeat-x;
+    background-size: 50vw;
+ 
+    width: 100vw;
+    
+    
+    
+    color: white;
+    
     display: flex;
     flex-direction: column;
    
     align-items: center;
     button{
+        background-color: $color_contraste;
+        border: solid 1px $color_contraste;
         &:hover{
             transform: scale(1.2);
         }
@@ -20,8 +51,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-family: $main_font;
 
-       
+        label{
+            font-size: 2vw;
+        }
+       input{
+        width: 20vw;
+       }
         
     }
 
@@ -30,5 +67,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-family: $main_font;
     }
 }

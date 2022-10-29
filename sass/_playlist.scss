@@ -1,0 +1,31 @@
+
+// PLAYLIST 
+#canciones_guardadas{
+    width: 80%;
+     
+        height: 100%;
+        width: 85vw;
+        margin-top: 2%;
+      
+        ul{
+            list-style: none;
+            margin-left: 5%;
+            
+            .canciones_playlist{
+                
+                width: 85vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+                margin-bottom: 1%;
+                .item_playlist{
+                    width: 50%;
+                    font-size: larger;
+                }
+                
+            
+            }
+        }
+
+}

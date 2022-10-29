@@ -1,14 +1,42 @@
 @charset "UTF-8";
 /*Importo archivos base*/ /*Colores de la pagina*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+html {
+  height: 100vh;
+}
+html .bg-claro {
+  height: 100%;
+  width: 100%;
+}
+
+.header-index {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-index .logo {
+  width: auto;
+  height: 20vh;
+  color: white;
+}
+
 .conteiner_index {
-  width: 50vw;
-  height: fit-content;
-  margin: 0% 25vw;
-  padding-top: 3%;
-  border: 2px solid blue;
+  height: 80vh;
+  background-color: #121640;
+  background-image: url("../Logo.png");
+  background-position: left center;
+  background-repeat: repeat-x;
+  background-size: 50vw;
+  width: 100vw;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.conteiner_index button {
+  background-color: #ee3ec9;
+  border: solid 1px #ee3ec9;
 }
 .conteiner_index button:hover {
   transform: scale(1.2);
@@ -17,12 +45,69 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+.conteiner_index form label {
+  font-size: 2vw;
+}
+.conteiner_index form input {
+  width: 20vw;
 }
 .conteiner_index .registro {
   padding: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+#canciones_guardadas {
+  width: 80%;
+  height: 100%;
+  width: 85vw;
+  margin-top: 2%;
+}
+#canciones_guardadas ul {
+  list-style: none;
+  margin-left: 5%;
+}
+#canciones_guardadas ul .canciones_playlist {
+  width: 85vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
+#canciones_guardadas ul .canciones_playlist .item_playlist {
+  width: 50%;
+  font-size: larger;
+}
+
+.form_registro {
+  color: #ee3ec9;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vw;
+  border-radius: 15px;
+  width: 50vw;
+  height: fit-content;
+  margin: 0% 25vw;
+  padding-top: 3%;
+}
+.form_registro form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form_registro button {
+  background-color: #ee3ec9;
+  border: solid 1px #ee3ec9;
+}
+.form_registro button:hover {
+  transform: scale(1.2);
+}
+.form_registro input {
+  width: 50vw;
 }
 
 /* Reseteo */
@@ -36,7 +121,7 @@
 }
 
 body {
-  background-color: #FFF5E4;
+  background-color: #121640;
 }
 
 header {
@@ -56,9 +141,9 @@ main {
   display: flex;
   height: 80vh;
   width: 100vw;
-  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FFF5E4;
 }
 main .menu {
   width: 15vw;
@@ -74,16 +159,18 @@ main .menu nav {
 }
 main .menu nav a {
   padding: 5%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5vw;
+  color: #ee3ec9;
 }
 main .contenido {
-  height: 100%;
+  height: 80vh;
   width: 85vw;
 }
 main .cancionesXgenero {
   width: 80%;
   height: 100%;
   width: 85vw;
-  margin-top: 2%;
 }
 main .cancionesXgenero ul {
   list-style: none;
@@ -94,13 +181,40 @@ main .cancionesXgenero ul .canciones {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 1%;
+  margin: 1% 0;
 }
 main .cancionesXgenero ul .canciones .item {
   width: 50%;
   font-size: larger;
+  font-family: "Montserrat", sans-serif;
+  margin: 0.2%;
+}
+main #canciones_guardadas {
+  width: 80%;
+  height: 100%;
+  width: 85vw;
+}
+main #canciones_guardadas ul {
+  list-style: none;
+  margin-left: 5%;
+}
+main #canciones_guardadas ul .canciones_playlist {
+  width: 85vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1% 0;
+}
+main #canciones_guardadas ul .canciones_playlist .item-playlist {
+  width: 50%;
+  font-size: larger;
+  font-family: "Montserrat", sans-serif;
+  margin: 0.2%;
 }
 
+.contenido {
+  margin-top: 5%;
+}
 .contenido .generos {
   margin: 0 5%;
   display: flex;
@@ -108,39 +222,48 @@ main .cancionesXgenero ul .canciones .item {
   flex-wrap: wrap;
 }
 .contenido .generos .genero {
-  margin: 5%;
+  margin: 1% 5%;
 }
 
 #progress-container {
   width: 80%;
   margin: 0 5%;
   background-color: #121640;
+  border: solid 1px #ee3ec9;
 }
 
 #progress {
-  background-color: #00C4CC;
+  background-color: #ee3ec9;
   width: 0%;
 }
 
-.controles {
+#reproduccion {
+  width: auto;
+  margin-left: 15vw;
+  padding-top: 2%;
+  height: fit-content;
+  justify-content: space-evenly;
+}
+#reproduccion .controles {
   width: 80%;
   margin: 0% 5%;
   justify-content: space-evenly;
 }
-.controles .boton_playlist {
-  margin: 0 5%;
+#reproduccion .boton_playlist, #reproduccion .eliminar_de_playlist {
+  margin: 1% 5%;
   color: white;
   background-color: #ee3ec9;
   border: white;
+  font-family: "Montserrat", sans-serif;
 }
-.controles button {
+#reproduccion button {
   background-color: transparent;
   border: none;
   margin: 2%;
 }
-.controles button i {
+#reproduccion button i {
   font-size: 1.7rem;
-  color: #121640;
+  color: #ee3ec9;
 }
 
 /*# sourceMappingURL=style.css.map */

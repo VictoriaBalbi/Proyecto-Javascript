@@ -35,7 +35,7 @@ function validarUsuario(e) {
         if (user.nombre == usuario.value && user.contraseña == contraseña.value) 
          {             
             // si esta registrado ingresa al sistema
-           location='main.html';
+           location='../search.html';
          }
     });
     

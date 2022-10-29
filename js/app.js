@@ -1,5 +1,9 @@
-//creo el array vacio para la playlist
-const playlist = [];
+//creo el array para la playlist
+let playlist = JSON.parse(localStorage.getItem('playlist')) ??  []
+
+
+console.log(playlist)
+
 const contenedor_cancionesRock = document.querySelector(".list-group-rock");
 const contenedor_cancionesPop = document.querySelector(".list-group-pop");
 const contenedor_cancionesIndie = document.querySelector(".list-group-indie");
@@ -31,6 +35,7 @@ const cargarDatosIndie = async () =>{
     mostrarCancionesDom(canciones,contenedor_cancionesIndie);
     agregarEventos();
 }
+
 
 const fetchCanciones = async() => {
     const res = await fetch("../data.json")
@@ -82,7 +87,9 @@ function agregarEventos(){
     const boton_playlist= document.querySelector(".boton_playlist");
     
     boton_playlist.addEventListener("click",sumarPlaylist,false)
-    
+
+    const eliminar_de_playlist= document.querySelector(".eliminar_de_playlist");
+    eliminar_de_playlist.addEventListener("click",quitarPlaylist,false)
 
    
 }
@@ -166,11 +173,9 @@ function playApausa() {
         play.classList.add("fa-pause")
         play.classList.remove("fa-play")
     }
+   
 }
 
-
-
-// TO DO: DIFERENCIAR LOS BOTONES PARA QUE NO HAGAN NADA SI EL CHECK ESTA EN OTRO INPUT
 
 function sumarPlaylist(e) {
     e.preventDefault();
@@ -178,17 +183,23 @@ function sumarPlaylist(e) {
     
 
     let repetida = false;
-    
-    playlist.forEach((cancion) => {
-        if (cancion.titulo == canciones[valorActivo].titulo) 
-        {  repetida=true;
-            return // salgo del foreach
-        }
-    });
+    if (playlist){
+        playlist.forEach((cancion) => {
+            if (cancion.titulo == canciones[valorActivo].titulo) 
+            {  repetida=true;
+                return // salgo del foreach
+            }
+        });
 
-    
+    }
+   
+       
     if (repetida == false){
         playlist.push(canciones[valorActivo]);
+        //lo paso a json
+        const playlistJSON = JSON.stringify(playlist);
+        //lo subo al local storage
+        localStorage.setItem("playlist",playlistJSON);
     
         Swal.fire({
             title: 'La cancion se agrego a la playlist',
@@ -206,10 +217,34 @@ function sumarPlaylist(e) {
         })
     }
     
-
-    console.log(playlist)
     
 }
+
+function quitarPlaylist(e){
+    e.preventDefault();
+    let valorActivo = document.querySelector('input[name=listGroupRadio]:checked').value; 
+    
+    
+    playlist.splice(valorActivo, 1) 
+    console.log(playlist)
+    const playlistJSON = JSON.stringify(playlist);
+    //lo subo al local storage
+    localStorage.setItem("playlist",playlistJSON);
+    
+    Swal.fire({
+        title: 'La cancion se quito de la playlist',
+        text: 'Continuar?',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+    })
+
+    contenedor_playlist = document.querySelector(".list-group-playlist");
+    // borro la lista y la vuelvo a cargar actualizada
+    while(contenedor_playlist.firstChild) contenedor_playlist.removeChild(contenedor_playlist.firstChild)
+    mostrarCancionesPlaylist(playlist, contenedor_playlist )
+
+}
+
 
 // le agrego el evento  TIMEUPDATE al audio para mostrar el avance de la cancion
 audio.addEventListener("timeupdate",actualizarBarraProgreso)
@@ -252,6 +287,7 @@ document.querySelector("#boton_a_rock").addEventListener("click", function () {
     document.querySelector(".cancionesXgenero").style.display = "block";
     document.querySelector(".controles").style.display = "flex";
     document.querySelector("#progress-container").style.display = "flex";
+    document.querySelector(".eliminar_de_playlist").style.display = "none";
     cargarDatosRock()
 
   }); 
@@ -262,14 +298,80 @@ document.querySelector("#boton_a_pop").addEventListener("click", function () {
     document.querySelector("#pop").style.display = "flex";
     document.querySelector(".controles").style.display = "flex";
     document.querySelector("#progress-container").style.display = "flex";
+    document.querySelector(".eliminar_de_playlist").style.display = "none";
     cargarDatosPop()
 }); 
 document.querySelector("#boton_a_indie").addEventListener("click", function () {
     document.querySelector(".contenido").style.display = "none";
+    document.querySelector("#canciones_guardadas").style.display = "none";
     document.querySelector(".cancionesXgenero").style.display = "block";
     document.querySelector("#indie").style.display = "flex";
     document.querySelector(".controles").style.display = "flex";
     document.querySelector("#progress-container").style.display = "flex";
+    document.querySelector(".eliminar_de_playlist").style.display = "none";
     cargarDatosIndie()
 }); 
+
+
+
+//-----------------------------------------------------------------------------------------
+// PLAYLIST 
+document.querySelector("#boton_a_playlist").addEventListener("click", function () {
+    document.querySelector(".contenido").style.display = "none";
+    document.querySelector("#rock").style.display = "none";
+    document.querySelector("#pop").style.display= "none";
+    document.querySelector("#indie").style.display= "none";
+    document.querySelector("#canciones_guardadas").style.display = "flex";
+    document.querySelector(".controles").style.display = "flex";
+    document.querySelector("#progress-container").style.display = "flex";
+    document.querySelector(".boton_playlist").style.display = "none";
+    document.querySelector(".eliminar_de_playlist").style.display = "block";
+    cargarDatosPlaylist()
+
+}); 
+
+let contenedor_playlist = document.querySelector(".list-group-playlist");
+
+function mostrarCancionesPlaylist(playlist, contenedor_playlist){
+     // borro la lista y la vuelvo a cargar 
+     while(contenedor_playlist.firstChild) contenedor_playlist.removeChild(contenedor_playlist.firstChild)
+
+    playlist.forEach((cancion,indice)=>{
+
+        const li = document.createElement("li");
+        li.innerHTML = `
+       
+            <div class="canciones_playlist">
+                <div class="item-playlist">
+                    <input class="form-check-input me-1 seleccionado" type="radio" name="listGroupRadio" value=${indice} id="input ${indice}">
+                    <label id="cancion-playlist" class="form-check-label" for="firstRadio">${cancion.titulo}, ${cancion.artista}</label>
+                </div>
+                
+            </div> 
+         
+        `
+        contenedor_playlist.append(li)
+
+      
+    })
+}
+
+const cargarDatosPlaylist = async () =>{
+    // me bajo el array de canciones de la playlist del local storage
+    canciones = playlist;
+    if(canciones!=0){
+        mostrarCancionesPlaylist(playlist,contenedor_playlist);
+        agregarEventos();
+    }
+    else{
+        
+        Swal.fire({
+            title: 'No hay canciones en la playlist',
+            text: 'Continuar?',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        })
+
+    }
+}
 

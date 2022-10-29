@@ -1,0 +1,31 @@
+
+.form_registro{   
+    color: $color_contraste;
+    font-family: $main_font;
+    font-size: 2vw;
+    border-radius: 15px;
+    width: 50vw;
+    height: fit-content;
+    margin:0% 25vw;
+    padding-top: 3%;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{
+        background-color: $color_contraste;
+        border: solid 1px $color_contraste;
+        
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    input{
+        width: 50vw;
+    }
+
+}
