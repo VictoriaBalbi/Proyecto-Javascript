@@ -139,7 +139,6 @@ header .logo {
 
 main {
   display: flex;
-  height: 80vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -151,6 +150,7 @@ main .menu {
   background-color: #121640;
 }
 main .menu nav {
+  width: 100%;
   padding: 10%;
   height: 100%;
   display: flex;
@@ -164,7 +164,7 @@ main .menu nav a {
   color: #ee3ec9;
 }
 main .contenido {
-  height: 80vh;
+  height: 100%;
   width: 85vw;
 }
 main .cancionesXgenero {
@@ -181,6 +181,7 @@ main .cancionesXgenero ul .canciones {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  height: auto;
   margin: 1% 0;
 }
 main .cancionesXgenero ul .canciones .item {
@@ -190,8 +191,6 @@ main .cancionesXgenero ul .canciones .item {
   margin: 0.2%;
 }
 main #canciones_guardadas {
-  width: 80%;
-  height: 100%;
   width: 85vw;
 }
 main #canciones_guardadas ul {

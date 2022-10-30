@@ -1,8 +1,6 @@
-//creo el array para la playlist
+//creo el array para la playlist → si tengo algo en el local storage lo tomo, sino lo inicio vacio
 let playlist = JSON.parse(localStorage.getItem('playlist')) ??  []
 
-
-console.log(playlist)
 
 const contenedor_cancionesRock = document.querySelector(".list-group-rock");
 const contenedor_cancionesPop = document.querySelector(".list-group-pop");
@@ -51,7 +49,7 @@ function mostrarCancionesDom(canciones, contenedor_canciones){
        
             <div class="canciones">
                 <div class="item">
-                    <input class="form-check-input me-1 seleccionado" type="radio" name="listGroupRadio" value=${indice} id="input ${indice}">
+                    <input class="form-check-input me-1 seleccionado" type="radio" name="listGroupRadio" value=${indice} id="input ${indice}" onchange = "pausarXCambioDeCancion()">
                     <label id="cancion-rock1" class="form-check-label" for="firstRadio">${cancion.titulo}, ${cancion.artista}</label>
                 </div>
                 
@@ -95,15 +93,26 @@ function agregarEventos(){
 }
 
 function escuchar () {
-    
+// si el audio no esta en tiempo cero es porq se pauso, asi que reproduzco desde donde estoy
+   if(audio.currentTime!=0){
+    audio.play()
+    playApausa()
+   }
+// si esta en cero es porque quiero reproducir otra cancion → la cargo de cero  
+   else{
     let valorActivo = document.querySelector('input[name=listGroupRadio]:checked').value
     audio.src = `./musica/` + canciones[valorActivo].ruta;
+    
     audio.play();
     playApausa()
     
+   }
+  
     
     
 }
+
+
 
 function pausar () {
    
@@ -173,8 +182,29 @@ function playApausa() {
         play.classList.add("fa-pause")
         play.classList.remove("fa-play")
     }
+ 
    
 }
+
+
+// Cambiar de play a paused al cambiar de input seleccionado
+function pausarXCambioDeCancion() {
+    pausar()
+    //limpio la barra de progreso
+  
+   // calculo el porcentaje de cancion que va
+   const porcentaje = 0;
+   
+   // reflejo el porcentaje en el css
+   progress.style.width= porcentaje + "%";
+
+   // pongo el audio en tiempo cero para que al escuchar otra funcione
+   audio.currentTime=0;
+    
+   
+}
+
+
 
 
 function sumarPlaylist(e) {
@@ -242,7 +272,7 @@ function quitarPlaylist(e){
     // borro la lista y la vuelvo a cargar actualizada
     while(contenedor_playlist.firstChild) contenedor_playlist.removeChild(contenedor_playlist.firstChild)
     mostrarCancionesPlaylist(playlist, contenedor_playlist )
-
+    pausarXCambioDeCancion() 
 }
 
 
@@ -290,7 +320,7 @@ document.querySelector("#boton_a_rock").addEventListener("click", function () {
     document.querySelector(".eliminar_de_playlist").style.display = "none";
     cargarDatosRock()
 
-  }); 
+}); 
 
 document.querySelector("#boton_a_pop").addEventListener("click", function () {
     document.querySelector(".contenido").style.display = "none";
@@ -343,7 +373,7 @@ function mostrarCancionesPlaylist(playlist, contenedor_playlist){
        
             <div class="canciones_playlist">
                 <div class="item-playlist">
-                    <input class="form-check-input me-1 seleccionado" type="radio" name="listGroupRadio" value=${indice} id="input ${indice}">
+                    <input class="form-check-input me-1 seleccionado" type="radio" name="listGroupRadio" value=${indice} id="input ${indice}"  onchange = "pausarXCambioDeCancion()">
                     <label id="cancion-playlist" class="form-check-label" for="firstRadio">${cancion.titulo}, ${cancion.artista}</label>
                 </div>
                 
@@ -357,7 +387,7 @@ function mostrarCancionesPlaylist(playlist, contenedor_playlist){
 }
 
 const cargarDatosPlaylist = async () =>{
-    // me bajo el array de canciones de la playlist del local storage
+    // llamo a la playlist canciones para unificar funciones
     canciones = playlist;
     if(canciones!=0){
         mostrarCancionesPlaylist(playlist,contenedor_playlist);

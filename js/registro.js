@@ -20,7 +20,12 @@ function registrarse (e){
     if (usuario_nuevo.value!=""){
         usuarios.forEach((user) => {
             if (user.nombre == usuario_nuevo.value) 
-             { alert("Ya existe ese usuario")
+             { Swal.fire({
+                    title: 'El usuario ya existe',
+                    text: 'Continuar?',
+                    icon: 'warning',
+                    confirmButtonText: 'Aceptar'
+                 })
                 usuario_nuevo.value="";
                 contraseña_nueva.value="";
                 contraseña2_nueva.value="";
@@ -28,17 +33,31 @@ function registrarse (e){
 
                 // si ya existe el usuario → pongo usuario_existente en true
                 usuario_existente=true;
+                e.preventDefault(); //para evitar que se refresque la pagina
                 return // salgo del foreach
              }
         });
         if (usuario_existente==true){
             //si el usuario ya existe salgo de la funcion
+            
+            
             return
         }
         //si sale del for es porque el usuario es valido
         if (contraseña_nueva.value==contraseña2_nueva.value)
         {   console.log(usuario_nuevo.value)
-            alert("Registrado")
+            Toastify({
+
+                text: "Usuario registrado",
+                duration: 2000,
+                gravity: 'top',
+                position: 'right',
+                style: {
+                  background: 'linear-gradient(to right, #00b09b, #96c92d)'
+                }
+          
+                
+            }).showToast();
             usuarios.push( {nombre: usuario_nuevo.value,contraseña: contraseña_nueva.value} );
             //lo paso a JSON
             const usuariosJSON = JSON.stringify(usuarios);
@@ -46,9 +65,29 @@ function registrarse (e){
             localStorage.setItem("usuarios",usuariosJSON);
             // vuelvo a la pagina inicial para ingresar
             e.preventDefault(); //para evitar que se refresque la pagina y perder los datos pusheados
-            location = 'index.html'
+            // le doy unos seg antes de volver al inicio
+            setTimeout(irAlIndex,2000);
+        } else {
+            e.preventDefault(); 
+            Toastify({
+
+                text: "Las contraseñas no coinciden",
+                duration: 2000,
+                gravity: 'top',
+                position: 'right',
+                style: {
+                  background: 'linear-gradient(to right, #880808, #FF0000)'
+                }
+          
+                
+            }).showToast();
+
         }
     }   
   
 
+}
+
+function irAlIndex(){
+    location = 'index.html'
 }
