@@ -2,7 +2,7 @@
 <h1 align="center">Hi 👋, I'm Victoria</h1>
 <h3 align="center">A biomedical engineering student from Argentina</h3>
 
-- 🔭 I’m currently working on [an online music player](newvibesmusica.000webhostapp.com)
+- 🔭 I’m currently working on [an online music player](nhttps://newvibesmusica.000webhostapp.com/)
 
 - 🌱 I’m currently learning **JavaScript**
 
